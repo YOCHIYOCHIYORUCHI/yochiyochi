@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <title>CAFE</title>
+    <link rel="stylesheet" href="slideshow.css">
+	<link rel="stylesheet" href="drawer.css">
+    <link rel="stylesheet" href="tabpanel.css">
+    <script src="jquery-3.7.1.min.js"></script>
+	<script src="iscroll.js"></script>
+	<script src="drawer.js"></script>
+
+    <script type="text/javascript">
+
+        $(function() {
+            $('.drawer').drawer();
+            $('.drawer-menu li').click(function() {
+                $('.drawer').drawer('close');
+            });
+        });
+
+        $(function(){
+            $('#navi a').click(function(){
+                $('#main img').before('<img src="'+$(this).attr('href')+'" alt="'+$(this).attr('alt')+'">');
+                $('#main img:last').fadeOut('fast',function(){$(this).remove();});
+                return false;
+            });
+        });
+
+        $(function(){
+            $('ul.panel li:not('+$('ul.tab li a.selected').attr('href')+')').hide();
+            $('ul.tab li a').click(function(){
+                $('ul.tab li a').removeClass('selected');
+                $(this).addClass('selected');
+                $('ul.panel li').hide();
+                $($(this).attr('href')).show();
+                return false;
+            });
+        });
+
+    </script>
+
+    <style>
+        h1 {
+            margin: 70px auto 0;
+        }
+        h4 {
+            margin: 15px auto 0;
+        }
+    </style>
+
+</head>
+
+    
+<body class="drawer drawer--left">
+
+    <header role="banner">
+		<button type="button" class="drawer-toggle drawer-hamburger">
+			<span class="sr-only">toggle navigation</span>
+			<span class="drawer-hamburger-icon"></span>
+		</button>
+		<nav class="drawer-nav" role="navigation">
+			<ul class="drawer-menu">
+			<li><a class="drawer-brand" href="top.html">TOPに戻る</a></li>
+			<li><a class="drawer-menu-item" href="cafe.html">新宿らんぶる</a></li>
+			<li><a class="drawer-menu-item" href="park.html">新宿御苑</a></li>
+			<li><a class="drawer-menu-item" href="food.html">洋食屋芳味亭</a></li>
+			<li><a class="drawer-menu-item" href="hotel.html">山の上ホテル</a></li>
+			</ul>
+		</nav>
+	</header>
+
+    <main role="main">
+
+    <h1 style="text-align:center">おすすめスポットその一「新宿らんぶる」</h1>
+    <h4 style="text-align:center">
+        「新宿らんぶる」は東京都新宿区、新宿三丁目駅の近くにある喫茶店です。<br>
+        昭和25年に開店した歴史あるお店で、今も当時のような穏やかな雰囲気で営業を続けています。<br>
+        地下にある広々とした客席はまるで秘密の場所のようで、若い世代にも注目されている名店です。<br>
+    </h4>
+
+    <div id="container">
+		<h2>注目ポイント</h2>
+		<ul class="tab">
+			<li><a href="#tab1" class="selected">名曲喫茶</a></li>
+			<li><a href="#tab2">雰囲気漂う内装</a></li>
+			<li><a href="#tab3">美味しいレトロ</a></li>
+            <li><a href="#tab4">駅から徒歩で</a></li>
+		</ul>
+		<ul class="panel">
+			<li id="tab1">
+				この喫茶店は名曲喫茶と呼ばれる、店内でクラシック音楽を聴かせる喫茶店。<br>
+                現在は喫茶店らしく軽食やコーヒーを提供しているが、以前は音楽を聴かせることに特化していた。<br>
+			</li>
+			<li id="tab2">
+				地下には200席ほどの座席があり、天井も高く広々としている。<br>
+                優雅な階段やシャンデリア、ダイヤル式の電話などもあり歴史を感じさせる。<br>
+			</li>
+			<li id="tab3">
+				やはりこういう喫茶店で楽しみたいのは美味しいコーヒーや軽食、スイーツだろう。<br>
+                チョコレートパフェやクリームソーダなど、レトロなメニューも楽しむことができる。<br>
+            </li>
+            <li id="tab4">
+				新宿らんぶるは新宿三丁目駅から徒歩3分、新宿駅から徒歩5分程の場所にある。<br>
+                客席が広いため並ぶことも少なく、気軽に立ち寄ることができるだろう。<br>
+            </li>
+		</ul>
+	</div>
+    
+    <div id="container">
+        <div id="navi">
+            <ul>
+                <li>
+                    <a href="images/cafe3.jpg" alt="カフェ外観">
+                        <img src="images/cafe3.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="images/cafe4.jpg" alt="カフェ内装">
+                        <img src="images/cafe4.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="images/cafe5.jpg" alt="カフェコーヒー">
+                        <img src="images/cafe5.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="images/cafe6.jpg" alt="カフェ内装">
+                        <img src="images/cafe6.jpg">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="main">
+            <img src="images/cafe3.jpg" alt="カフェ外観">
+        </div>
+    </div>
+
+    </main>
+
+</body>
+</html>

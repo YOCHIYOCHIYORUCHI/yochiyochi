@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <title>FOOD</title>
+    <link rel="stylesheet" href="slideshow.css">
+	<link rel="stylesheet" href="drawer.css">
+    <link rel="stylesheet" href="tabpanel.css">
+    <script src="jquery-3.7.1.min.js"></script>
+	<script src="iscroll.js"></script>
+	<script src="drawer.js"></script>
+
+    <script type="text/javascript">
+
+        $(function() {
+            $('.drawer').drawer();
+            $('.drawer-menu li').click(function() {
+                $('.drawer').drawer('close');
+            });
+        });
+
+        $(function(){
+            $('#navi a').click(function(){
+                $('#main img').before('<img src="'+$(this).attr('href')+'" alt="'+$(this).attr('alt')+'">');
+                $('#main img:last').fadeOut('fast',function(){$(this).remove();});
+                return false;
+            });
+        });
+
+        $(function(){
+            $('ul.panel li:not('+$('ul.tab li a.selected').attr('href')+')').hide();
+            $('ul.tab li a').click(function(){
+                $('ul.tab li a').removeClass('selected');
+                $(this).addClass('selected');
+                $('ul.panel li').hide();
+                $($(this).attr('href')).show();
+                return false;
+            });
+        });
+
+    </script>
+
+    <style>
+        h1 {
+            margin: 70px auto 0;
+        }
+        h4 {
+            margin: 15px auto 0;
+        }
+    </style>
+
+</head>
+
+    
+<body class="drawer drawer--left">
+
+    <header role="banner">
+		<button type="button" class="drawer-toggle drawer-hamburger">
+			<span class="sr-only">toggle navigation</span>
+			<span class="drawer-hamburger-icon"></span>
+		</button>
+		<nav class="drawer-nav" role="navigation">
+			<ul class="drawer-menu">
+			<li><a class="drawer-brand" href="top.html">TOPに戻る</a></li>
+			<li><a class="drawer-menu-item" href="cafe.html">新宿らんぶる</a></li>
+			<li><a class="drawer-menu-item" href="park.html">新宿御苑</a></li>
+			<li><a class="drawer-menu-item" href="food.html">洋食屋芳味亭</a></li>
+			<li><a class="drawer-menu-item" href="hotel.html">山の上ホテル</a></li>
+			</ul>
+		</nav>
+	</header>
+
+    <main role="main">
+
+    <h1 style="text-align:center">おすすめスポットその三「洋食屋芳味亭」</h1>
+    <h4 style="text-align:center">
+        「洋食屋芳味亭」は東京都中央区、人形町駅から徒歩数分の場所にある洋食屋です。<br>
+        昭和8年に開業し、洋食の名店として歴史に名を残しています。<br>
+        贅沢に洋食を楽しみたいなら、一度訪れてはいかがでしょうか。<br>
+    </h4>
+
+    <div id="container">
+		<h2>注目ポイント</h2>
+		<ul class="tab">
+			<li><a href="#tab1" class="selected">こだわりのデミグラス</a></li>
+			<li><a href="#tab2">かにクリームコロッケ</a></li>
+			<li><a href="#tab3">テイクアウトも</a></li>
+            <li><a href="#tab4">店内にも注目</a></li>
+		</ul>
+		<ul class="panel">
+			<li id="tab1">
+				手作りだからこそ味わえる、本物のデミグラスソースがある。<br>
+                4日間、心を込めて作られたデミグラスソースをいただいてみては。<br>
+			</li>
+			<li id="tab2">
+				作家の向田邦子氏のエッセイ集には、芳味亭のコロッケを絶賛している記載がある。<br>
+                実際にカニクリームコロッケを食べていたようなので、多分相当美味しい。<br>
+			</li>
+			<li id="tab3">
+				芳味亭の味はテイクアウトも可能。<br>
+                家や職場など、ちょっと贅沢な時間を過ごしたい時におすすめ。<br>
+            </li>
+            <li id="tab4">
+				和モダンな店内はまるでタイムスリップしたような徹底ぶり。<br>
+                より食事を楽しめる世界観で、贅沢な時間が過ごせる。<br>
+            </li>
+		</ul>
+	</div>
+    
+    <div id="container">
+        <div id="navi">
+            <ul>
+                <li>
+                    <a href="images/food3.jpg" alt="洋食屋外観">
+                        <img src="images/food3.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="images/food4.jpg" alt="洋食屋内装">
+                        <img src="images/food4.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="images/food5.jpg" alt="洋食屋ご飯">
+                        <img src="images/food5.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="images/food6.jpg" alt="洋食屋ご飯">
+                        <img src="images/food6.jpg">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="main">
+            <img src="images/food3.jpg" alt="公園様子">
+        </div>
+    </div>
+
+    </main>
+
+</body>
+</html>

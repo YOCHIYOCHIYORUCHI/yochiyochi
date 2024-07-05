@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+	<title>TOP</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="slick/slick.css">
+	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+	<link rel="stylesheet" type="text/css" href="common.css">
+	<link rel="stylesheet" href="drawer.css">
+	<link rel="stylesheet" href="top.css">
+	<script src="jquery-3.7.1.min.js"></script>
+	<script src="slick/slick.js"></script>
+	<script src="common.js"></script>
+	<script src="iscroll.js"></script>
+	<script src="drawer.js"></script>
+
+	<script>
+		$(function() {
+			$('.drawer').drawer();
+			$('.drawer-menu li').click(function() {
+				$('.drawer').drawer('close');
+			});
+		});
+	</script>
+
+	<style>
+	</style>
+  
+</head>
+<body class="drawer drawer--left">
+
+	<header role="banner">
+		<button type="button" class="drawer-toggle drawer-hamburger">
+			<span class="sr-only">toggle navigation</span>
+			<span class="drawer-hamburger-icon"></span>
+		</button>
+		<nav class="drawer-nav" role="navigation">
+			<ul class="drawer-menu">
+			<li><a class="drawer-brand" href="top.html">TOPに戻る</a></li>
+			<li><a class="drawer-menu-item" href="cafe.html">新宿らんぶる</a></li>
+			<li><a class="drawer-menu-item" href="park.html">新宿御苑</a></li>
+			<li><a class="drawer-menu-item" href="food.html">洋食屋芳味亭</a></li>
+			<li><a class="drawer-menu-item" href="hotel.html">山の上ホテル</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main role="main">
+		<h1 style="text-align:center">歴史を感じる日本都内おすすめスポット</h1>
+		<h4 style="text-align:center">
+			喧騒から離れた静かな場所で日本を味わってみませんか？<br>
+			あの文豪も愛した、歴史を体感できるスポットを少しだけご紹介します。<br>
+		</h4>
+
+		<section class=" slider">
+			<div align="center"><img src="images/cafe1.jpg"><p class="caption"></p></div>
+			<div align="center"><img src="images/cafe2.jpg"><p class="caption"></p></div>
+			<div align="center"><img src="images/park1.jpg"><p class="caption"></p></div>
+			<div align="center"><img src="images/park2.jpg"><p class="caption"></p></div>
+			<div align="center"><img src="images/food1.jpg"><p class="caption"></p></div>
+			<div align="center"><img src="images/food2.jpg"><p class="caption"></p></div>
+			<div align="center"><img src="images/hotel1.jpg"><p class="caption"></p></div>
+			<div align="center"><img src="images/hotel2.jpg"><p class="caption"></p></div>
+		</section>
+
+		<h2 style="text-align:center">～充実した一日を過ごせるスポットを四つ紹介します～</h2>
+		<div class="icon_link">
+			<img src="images/cafe_icon.png" alt="カフェアイコン" class="icon">
+			<a href="cafe.html" class="text-link">カフェ「喫茶らんぶる」</a>
+		</div>
+		<div class="icon_link">
+			<img src="images/park_icon.png" alt="公園アイコン" class="icon">
+			<a href="park.html" class="text-link">　公園「新宿御苑」　</a>
+		</div>
+		<div class="icon_link">
+			<img src="images/food_icon.png" alt="食事アイコン" class="icon">
+			<a href="food.html" class="text-link">食事処「洋食屋芳味亭」</a>
+		</div>
+		<div class="icon_link">
+			<img src="images/hotel_icon.png" alt="ホテルアイコン" class="icon">
+			<a href="hotel.html" class="text-link">ホテル「山の上ホテル」</a>
+		</div>
+
+		<p style="text-align:center">※クリックするとリンク先へ飛びます</p>
+	</main>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <title>HOTEL</title>
+    <link rel="stylesheet" href="slideshow.css">
+	<link rel="stylesheet" href="drawer.css">
+    <link rel="stylesheet" href="tabpanel.css">
+    <script src="jquery-3.7.1.min.js"></script>
+	<script src="iscroll.js"></script>
+	<script src="drawer.js"></script>
+
+    <script type="text/javascript">
+
+        $(function() {
+            $('.drawer').drawer();
+            $('.drawer-menu li').click(function() {
+                $('.drawer').drawer('close');
+            });
+        });
+
+        $(function(){
+            $('#navi a').click(function(){
+                $('#main img').before('<img src="'+$(this).attr('href')+'" alt="'+$(this).attr('alt')+'">');
+                $('#main img:last').fadeOut('fast',function(){$(this).remove();});
+                return false;
+            });
+        });
+
+        $(function(){
+            $('ul.panel li:not('+$('ul.tab li a.selected').attr('href')+')').hide();
+            $('ul.tab li a').click(function(){
+                $('ul.tab li a').removeClass('selected');
+                $(this).addClass('selected');
+                $('ul.panel li').hide();
+                $($(this).attr('href')).show();
+                return false;
+            });
+        });
+
+    </script>
+
+    <style>
+        h1 {
+            margin: 70px auto 0;
+        }
+        h4 {
+            margin: 15px auto 0;
+        }
+    </style>
+
+</head>
+
+    
+<body class="drawer drawer--left">
+
+    <header role="banner">
+		<button type="button" class="drawer-toggle drawer-hamburger">
+			<span class="sr-only">toggle navigation</span>
+			<span class="drawer-hamburger-icon"></span>
+		</button>
+		<nav class="drawer-nav" role="navigation">
+			<ul class="drawer-menu">
+			<li><a class="drawer-brand" href="top.html">TOPに戻る</a></li>
+			<li><a class="drawer-menu-item" href="cafe.html">新宿らんぶる</a></li>
+			<li><a class="drawer-menu-item" href="park.html">新宿御苑</a></li>
+			<li><a class="drawer-menu-item" href="food.html">洋食屋芳味亭</a></li>
+			<li><a class="drawer-menu-item" href="hotel.html">山の上ホテル</a></li>
+			</ul>
+		</nav>
+	</header>
+
+    <main role="main">
+
+    <h1 style="text-align:center">おすすめスポットその四「山の上ホテル」</h1>
+    <h4 style="text-align:center">
+        「山の上ホテル」は東京都千代田区、御茶ノ水駅から徒歩6分程で行けるクラシックホテル。<br>
+        昭和29年に開業され、文化人のホテルとして広く知られている。<br>
+        川端康成さん、三島由紀夫さん、池波正太郎さんなどの著名人も訪れたことがある。<br>
+    </h4>
+
+    <div id="container">
+		<h2>注目ポイント</h2>
+		<ul class="tab">
+			<li><a href="#tab1" class="selected">建築を見てみる</a></li>
+			<li><a href="#tab2">文豪の歴史</a></li>
+			<li><a href="#tab3">美味しいものもある</a></li>
+            <li><a href="#tab4">とにかく雰囲気</a></li>
+		</ul>
+		<ul class="panel">
+			<li id="tab1">
+				山の上ホテルは、1920年代にパリで注目された「アール・デコ」建築のひとつとされている。<br>
+                クラシックでモダンなデザインは、見る人の心を豊かにするだろう。<br>
+			</li>
+			<li id="tab2">
+				出版社が近かったこともあり、創業から沢山の作家が執筆活動のためホテルを利用していた。<br>
+                現在も作家の描いた絵が各所に飾られている。<br>
+			</li>
+			<li id="tab3">
+				ホテル内には7つのレストラン&バーがある。<br>
+                あの作家も食べていたかもしれない本格料理で、至福のひと時を過ごすのも良いだろう。<br>
+            </li>
+            <li id="tab4">
+				東京の真ん中にあるホテルとは思えない、ノスタルジーな雰囲気が漂っている。<br>
+                時間を忘れて、まるでタイムスリップしたような場所で、日々の疲れを癒そう。<br>
+            </li>
+		</ul>
+	</div>
+    
+    <div id="container">
+        <div id="navi">
+            <ul>
+                <li>
+                    <a href="images/hotel3.jpg" alt="ホテル外観">
+                        <img src="images/hotel3.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="images/hotel4.jpg" alt="ホテル内装">
+                        <img src="images/hotel4.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="images/hotel5.jpg" alt="ホテル部屋">
+                        <img src="images/hotel5.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="images/hotel6.jpg" alt="ホテルバー">
+                        <img src="images/hotel6.jpg">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="main">
+            <img src="images/hotel3.jpg" alt="公園様子">
+        </div>
+    </div>
+
+    </main>
+
+</body>
+</html>

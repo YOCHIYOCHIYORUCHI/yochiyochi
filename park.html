@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <title>PARK</title>
+    <link rel="stylesheet" href="slideshow.css">
+	<link rel="stylesheet" href="drawer.css">
+    <link rel="stylesheet" href="tabpanel.css">
+    <script src="jquery-3.7.1.min.js"></script>
+	<script src="iscroll.js"></script>
+	<script src="drawer.js"></script>
+
+    <script type="text/javascript">
+
+        $(function() {
+            $('.drawer').drawer();
+            $('.drawer-menu li').click(function() {
+                $('.drawer').drawer('close');
+            });
+        });
+
+        $(function(){
+            $('#navi a').click(function(){
+                $('#main img').before('<img src="'+$(this).attr('href')+'" alt="'+$(this).attr('alt')+'">');
+                $('#main img:last').fadeOut('fast',function(){$(this).remove();});
+                return false;
+            });
+        });
+
+        $(function(){
+            $('ul.panel li:not('+$('ul.tab li a.selected').attr('href')+')').hide();
+            $('ul.tab li a').click(function(){
+                $('ul.tab li a').removeClass('selected');
+                $(this).addClass('selected');
+                $('ul.panel li').hide();
+                $($(this).attr('href')).show();
+                return false;
+            });
+        });
+
+    </script>
+
+    <style>
+        h1 {
+            margin: 70px auto 0;
+        }
+        h4 {
+            margin: 15px auto 0;
+        }
+    </style>
+
+</head>
+
+    
+<body class="drawer drawer--left">
+
+    <header role="banner">
+		<button type="button" class="drawer-toggle drawer-hamburger">
+			<span class="sr-only">toggle navigation</span>
+			<span class="drawer-hamburger-icon"></span>
+		</button>
+		<nav class="drawer-nav" role="navigation">
+			<ul class="drawer-menu">
+			<li><a class="drawer-brand" href="top.html">TOPに戻る</a></li>
+			<li><a class="drawer-menu-item" href="cafe.html">新宿らんぶる</a></li>
+			<li><a class="drawer-menu-item" href="park.html">新宿御苑</a></li>
+			<li><a class="drawer-menu-item" href="food.html">洋食屋芳味亭</a></li>
+			<li><a class="drawer-menu-item" href="hotel.html">山の上ホテル</a></li>
+			</ul>
+		</nav>
+	</header>
+
+    <main role="main">
+
+    <h1 style="text-align:center">おすすめスポットその二「新宿御苑」</h1>
+    <h4 style="text-align:center">
+        「新宿御苑」は東京都の新宿区と渋谷区に跨がる環境省所管の庭園です。<br>
+        明治39年に皇室の庭園として造られましたが、戦後からは国民公園として親しまれています。<br>
+        都会の喧騒に疲れたら、ここで一休みするといいかもしれません。<br>
+    </h4>
+
+    <div id="container">
+		<h2>注目ポイント</h2>
+		<ul class="tab">
+			<li><a href="#tab1" class="selected">四季を楽しむ</a></li>
+			<li><a href="#tab2">とにかく自然</a></li>
+			<li><a href="#tab3">食事もいいかも</a></li>
+            <li><a href="#tab4">絵もいいかも</a></li>
+		</ul>
+		<ul class="panel">
+			<li id="tab1">
+				新宿御苑の木々は、季節によって姿を変えていく。<br>
+                行くたびに新しい一面が見られるので、是非何度か足を運んで見てほしい。<br>
+			</li>
+			<li id="tab2">
+				東京ドーム約12個分の広さを有し、その敷地内は自然で埋め尽くされている。<br>
+                たまにはこういった自然の中で一息ついて、気分転換をしてみるのはどうだろうか。<br>
+			</li>
+			<li id="tab3">
+				新宿御苑の中には、自然を楽しみながらレストランや休憩所で舌鼓を打つこともできる。<br>
+                宇治茶やわらび餅、季節の和菓子など和を楽しむメニューが充実している。<br>
+            </li>
+            <li id="tab4">
+				私は新宿御苑に写生大会で赴いた事があり、結構楽しい。<br>
+                ベンチで木々のさざめきを聞きながら、風景画でも描いてみないだろうか？<br>
+            </li>
+		</ul>
+	</div>
+    
+    <div id="container">
+        <div id="navi">
+            <ul>
+                <li>
+                    <a href="images/park3.jpg" alt="公園様子">
+                        <img src="images/park3.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="images/park4.jpg" alt="公園様子">
+                        <img src="images/park4.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="images/park5.jpg" alt="公園様子">
+                        <img src="images/park5.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="images/park6.jpg" alt="休憩所様子">
+                        <img src="images/park6.jpg">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="main">
+            <img src="images/park3.jpg" alt="公園様子">
+        </div>
+    </div>
+
+    </main>
+
+</body>
+</html>

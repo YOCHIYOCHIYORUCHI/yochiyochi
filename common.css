@@ -1,0 +1,12 @@
+.slider{
+	margin: 30px auto;
+	width: 800px;
+}
+.slider img{
+	height: auto;
+	width: 400px;
+}
+.slick-prev:before,
+.slick-next:before {
+	color: #000000;
+}
